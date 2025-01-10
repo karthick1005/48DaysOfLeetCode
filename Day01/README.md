@@ -1,71 +1,97 @@
-# Day 1: Maximum Score After Splitting a String
 
-**Problem**: [LeetCode 1422 - Maximum Score After Splitting a String](https://leetcode.com/problems/maximum-score-after-splitting-a-string)  
-**Difficulty**: Easy  
+# Day 01: 952 - Word Subsets
 
----
+**Difficulty**: Medium
 
 ## Problem Description
+<p>You are given two string arrays <code>words1</code> and <code>words2</code>.</p>
 
-Given a string `s` of zeros and ones, split the string into two non-empty parts such that the score is maximized.  
+<p>A string <code>b</code> is a <strong>subset</strong> of string <code>a</code> if every letter in <code>b</code> occurs in <code>a</code> including multiplicity.</p>
 
-The score is calculated as:  
-- The number of `0`s in the left part **+** the number of `1`s in the right part.
+<ul>
+	<li>For example, <code>&quot;wrr&quot;</code> is a subset of <code>&quot;warrior&quot;</code> but is not a subset of <code>&quot;world&quot;</code>.</li>
+</ul>
 
----
+<p>A string <code>a</code> from <code>words1</code> is <strong>universal</strong> if for every string <code>b</code> in <code>words2</code>, <code>b</code> is a subset of <code>a</code>.</p>
 
-## Approach
+<p>Return an array of all the <strong>universal</strong> strings in <code>words1</code>. You may return the answer in <strong>any order</strong>.</p>
 
-1. **Brute-Force Approach**:  
-   - Iterate through every possible split of the string.
-   - Count the `0`s in the left part and `1`s in the right part for each split.
-   - Track the maximum score.
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-2. **Optimization Plan**:  
-   - Use a single traversal with counters or prefix sums to improve time complexity to O(n).
+<pre>
+<strong>Input:</strong> words1 = [&quot;amazon&quot;,&quot;apple&quot;,&quot;facebook&quot;,&quot;google&quot;,&quot;leetcode&quot;], words2 = [&quot;e&quot;,&quot;o&quot;]
+<strong>Output:</strong> [&quot;facebook&quot;,&quot;google&quot;,&quot;leetcode&quot;]
+</pre>
 
----
+<p><strong class="example">Example 2:</strong></p>
+
+<pre>
+<strong>Input:</strong> words1 = [&quot;amazon&quot;,&quot;apple&quot;,&quot;facebook&quot;,&quot;google&quot;,&quot;leetcode&quot;], words2 = [&quot;l&quot;,&quot;e&quot;]
+<strong>Output:</strong> [&quot;apple&quot;,&quot;google&quot;,&quot;leetcode&quot;]
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= words1.length, words2.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>1 &lt;= words1[i].length, words2[i].length &lt;= 10</code></li>
+	<li><code>words1[i]</code> and <code>words2[i]</code> consist only of lowercase English letters.</li>
+	<li>All the strings of <code>words1</code> are <strong>unique</strong>.</li>
+</ul>
+
+
 
 ## Solution
-
 ```javascript
 /**
- * @param {string} s
- * @return {number}
+ * @param {string[]} words1
+ * @param {string[]} words2
+ * @return {string[]}
  */
-var maxScore = function(s) {
-    let max_score = 0;
-    for (let i = 1; i < s.length; i++) {
-        let left = s.substring(0, i).split("").reduce((acc, str) => {
-            if (str === '0') acc++;
-            return acc;
-        }, 0);
-        let right = s.substring(i, s.length).split("").reduce((acc, str) => {
-            if (str === '1') acc++;
-            return acc;
-        }, 0);
-        max_score = Math.max(max_score, left + right);
+var wordSubsets = function(words1, words2) {
+    const maxCharFreq = new Array(26).fill(0);
+    
+    for (const word of words2) {
+        const tempCharFreq = new Array(26).fill(0);
+        
+        for (const char of word) {
+            tempCharFreq[char.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+        }
+        
+        for (let i = 0; i < 26; i++) {
+            maxCharFreq[i] = Math.max(maxCharFreq[i], tempCharFreq[i]);
+        }
     }
-    return max_score;
+    
+    const result = [];
+    
+    for (const word of words1) {
+        const tempCharFreq = new Array(26).fill(0);
+        
+        for (const char of word) {
+            tempCharFreq[char.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+        }
+        
+        let isUniversal = true;
+        
+        for (let i = 0; i < 26; i++) {
+            if (maxCharFreq[i] > tempCharFreq[i]) {
+                isUniversal = false;
+                break;
+            }
+        }
+        
+        if (isUniversal) {
+            result.push(word);
+        }
+    }
+    
+    return result;
 };
 ```
 
----
 
-## Key Learnings
-
-- **String Manipulation**: Efficiently handle substrings and count specific characters.
-- **Edge Cases**: Consider scenarios such as:
-  - `s = "10"`
-  - `s = "01"`
-  - Strings with all `0`s or all `1`s.
-- **Optimization**: While brute force works, it highlights the importance of optimizing for better performance.
-
----
-
-## Result
-
-- **Time Complexity**: O(n²) (Brute-Force)  
-- **Space Complexity**: O(n)
-
----
+## Next Steps
+- Add optimization or improvements.
