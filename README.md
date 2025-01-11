@@ -12,5 +12,5 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 06**: [1895 - Minimum Number of Operations to Move All Balls to Each Box](./Day06/README.md)
 - [x] **Day 07**: [1524 - String Matching in an Array](./Day07/README.md)
 - [x] **Day 08**: [3309 - Count Prefix and Suffix Pairs I](./Day08/README.md)
-- [x] **Day 00**: [2292 - Counting Words With a Given Prefix](./Day00/README.md)
-- [x] **Day 01**: [952 - Word Subsets](./Day01/README.md)
+- [x] **Day 09**: [2292 - Counting Words With a Given Prefix](./Day00/README.md)
+- [x] **Day 10**: [952 - Word Subsets](./Day10/README.md)
