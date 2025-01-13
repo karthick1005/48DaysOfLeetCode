@@ -16,3 +16,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 10**: [952 - Word Subsets](./Day10/README.md)
 - [x] **Day 11**: [1502 - Construct K Palindrome Strings](./Day11/README.md)
 - [x] **Day 12**: [2221 - Check if a Parentheses String Can Be Valid](./Day12/README.md)
+- [x] **Day 13**: [3455 - Minimum Length of String After Operations](./Day13/README.md)
