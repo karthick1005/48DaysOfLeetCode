@@ -1,9 +1,9 @@
-
 # Day 14: 2766 - Find the Prefix Common Array of Two Arrays
 
 **Difficulty**: Medium
 
 ## Problem Description
+
 <p>You are given two <strong>0-indexed </strong>integer<strong> </strong>permutations <code>A</code> and <code>B</code> of length <code>n</code>.</p>
 
 <p>A <strong>prefix common array</strong> of <code>A</code> and <code>B</code> is an array <code>C</code> such that <code>C[i]</code> is equal to the count of numbers that are present at or before the index <code>i</code> in both <code>A</code> and <code>B</code>.</p>
@@ -43,23 +43,38 @@ At i = 2: 1, 2, and 3 are common in A and B, so C[2] = 3.
 	<li><code>It is guaranteed that A and B are both a permutation of n integers.</code></li>
 </ul>
 
-
-
 ## Solution
+
 ```javascript
 /**
- * @param {number[][]} edges
- * @return {number}
+ * @param {number[]} A
+ * @param {number[]} B
+ * @return {number[]}
  */
-var findCenter = function(edges) {
-    if (edges[0][0] === edges[1][0] || edges[0][0] === edges[1][1]) {
-        return edges[0][0];
-    } else {
-        return edges[0][1];
+var findThePrefixCommonArray = function (A, B) {
+  const arr = [];
+  const setA = new Map();
+  const setB = new Map();
+  let commonCount = 0;
+
+  for (let i = 0; i < A.length; i++) {
+    if (setB.has(A[i])) {
+      commonCount++;
     }
+    setA.set(A[i], 1);
+
+    if (setA.has(B[i])) {
+      commonCount++;
+    }
+    setB.set(B[i]);
+
+    arr.push(commonCount);
+  }
+
+  return arr;
 };
 ```
 
-
 ## Next Steps
+
 - Add optimization or improvements.

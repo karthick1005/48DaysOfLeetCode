@@ -1,11 +1,27 @@
 /**
- * @param {number[][]} edges
- * @return {number}
+ * @param {number[]} A
+ * @param {number[]} B
+ * @return {number[]}
  */
-var findCenter = function(edges) {
-    if (edges[0][0] === edges[1][0] || edges[0][0] === edges[1][1]) {
-        return edges[0][0];
-    } else {
-        return edges[0][1];
+var findThePrefixCommonArray = function (A, B) {
+    const arr = [];
+    const setA = new Map();
+    const setB = new Map();
+    let commonCount = 0;
+
+    for (let i = 0; i < A.length; i++) {
+        if (setB.has(A[i])) {
+            commonCount++;
+        }
+        setA.set(A[i], 1);
+
+        if (setA.has(B[i])) {
+            commonCount++;
+        }
+        setB.set(B[i]);
+
+        arr.push(commonCount);
     }
-};
+
+    return arr;
+};  
