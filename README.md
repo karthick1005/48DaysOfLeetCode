@@ -19,3 +19,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 13**: [3455 - Minimum Length of String After Operations](./Day13/README.md)
 - [x] **Day 14**: [2766 - Find the Prefix Common Array of Two Arrays](./Day14/README.md)
 - [x] **Day 15**: [2429. Minimize XOR](./Day15/README.md)
+- [x] **Day 16**: [2533 - Bitwise XOR of All Pairings](./Day16/README.md)
