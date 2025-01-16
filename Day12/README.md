@@ -1,9 +1,9 @@
-
 # Day 12: 2221 - Check if a Parentheses String Can Be Valid
 
 **Difficulty**: Medium
 
 ## Problem Description
+
 <p>A parentheses string is a <strong>non-empty</strong> string consisting only of <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>. It is valid if <strong>any</strong> of the following conditions is <strong>true</strong>:</p>
 
 <ul>
@@ -57,42 +57,39 @@ Changing s[0] to either &#39;(&#39; or &#39;)&#39; will not make s valid.
 	<li><code>locked[i]</code> is either <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code>.</li>
 </ul>
 
-
-
 ## Solution
+
 ```javascript
 /**
- * @param {number[][]} intervals
- * @return {number[][]}
+ * @param {string} s
+ * @param {string} locked
+ * @return {boolean}
  */
-var merge = function(intervals) {
-  intervals=intervals.sort((a,b)=>{return a[0]-b[0]})
- let newarr=[]
- let count=0;
- for(let element of intervals)
- {
-    if(newarr.length===0)
-    {
-        newarr.push(element);
+var canBeValid = function (s, locked) {
+  if (s.length % 2 !== 0) return false;
+  let balanceLeft = 0;
+  let balanceRight = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(" || locked[i] === "0") {
+      balanceLeft++;
+    } else if (s[i] === ")") {
+      balanceLeft--;
     }
-    else
-    {   
-        if(newarr[count][1]  >= element[0] && (newarr[count][1] <= element[1] || newarr[count][1] >= element[1] ))
-        {
-            newarr[count]=[newarr[count][0],Math.max(newarr[count][1],element[1])]
-        }
-        else
-        {
-            newarr.push(element)
-            count++;
-        }
+    if (balanceLeft < 0) return false;
+  }
+
+  for (let i = s.length - 1; i >= 0; i--) {
+    if (s[i] === ")" || locked[i] === "0") {
+      balanceRight++;
+    } else if (s[i] === "(") {
+      balanceRight--;
     }
-    
- }
- return newarr
+    if (balanceRight < 0) return false;
+  }
+  return true;
 };
 ```
 
-
 ## Next Steps
+
 - Add optimization or improvements.

@@ -1,30 +1,29 @@
 /**
- * @param {number[][]} intervals
- * @return {number[][]}
+ * @param {string} s
+ * @param {string} locked
+ * @return {boolean}
  */
-var merge = function(intervals) {
-  intervals=intervals.sort((a,b)=>{return a[0]-b[0]})
- let newarr=[]
- let count=0;
- for(let element of intervals)
- {
-    if(newarr.length===0)
-    {
-        newarr.push(element);
-    }
-    else
-    {   
-        if(newarr[count][1]  >= element[0] && (newarr[count][1] <= element[1] || newarr[count][1] >= element[1] ))
-        {
-            newarr[count]=[newarr[count][0],Math.max(newarr[count][1],element[1])]
+var canBeValid = function (s, locked) {
+    if (s.length % 2 !== 0) return false;
+    let balanceLeft = 0;
+    let balanceRight = 0;
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === '(' || locked[i] === '0') {
+            balanceLeft++;
+        } else if (s[i] === ')') {
+            balanceLeft--;
         }
-        else
-        {
-            newarr.push(element)
-            count++;
-        }
+        if (balanceLeft < 0) return false;
     }
-    
- }
- return newarr
+
+    for (let i = s.length - 1; i >= 0; i--) {
+        if (s[i] === ')' || locked[i] === '0') {
+            balanceRight++;
+        } else if (s[i] === '(') {
+            balanceRight--;
+        }
+        if (balanceRight < 0) return false;
+    }
+    return true;
 };
+
