@@ -21,3 +21,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 15**: [2429. Minimize XOR](./Day15/README.md)
 - [x] **Day 16**: [2533 - Bitwise XOR of All Pairings](./Day16/README.md)
 - [x] **Day 17**: [2792 - Neighboring Bitwise XOR](./Day17/README.md)
+- [x] **Day 18**: [1485 - Minimum Cost to Make at Least One Valid Path in a Grid](./Day18/README.md)
