@@ -23,3 +23,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 17**: [2792 - Neighboring Bitwise XOR](./Day17/README.md)
 - [x] **Day 18**: [1485 - Minimum Cost to Make at Least One Valid Path in a Grid](./Day18/README.md)
 - [x] **Day 19**: [407 - Trapping Rain Water II](./Day19/README.md)
+- [x] **Day 20**: [2685 - First Completely Painted Row or Column](./Day20/README.md)
