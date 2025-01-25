@@ -28,3 +28,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 22**: [1876 - Map of Highest Peak](./Day22/README.md)
 - [x] **Day 23**: [1396 - Count Servers that Communicate](./Day23/README.md)
 - [x] **Day 24**: [820 - Find Eventual Safe States](./Day24/README.md)
+- [x] **Day 25**: [3219 - Make Lexicographically Smallest Array by Swapping Elements](./Day25/README.md)
