@@ -30,3 +30,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 24**: [820 - Find Eventual Safe States](./Day24/README.md)
 - [x] **Day 25**: [3219 - Make Lexicographically Smallest Array by Swapping Elements](./Day25/README.md)
 - [x] **Day 26**: [2246 - Maximum Employees to Be Invited to a Meeting](./Day26/README.md)
+- [x] **Day 27**: [1558 - Course Schedule IV](./Day27/README.md)
