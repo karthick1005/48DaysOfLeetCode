@@ -32,3 +32,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 26**: [2246 - Maximum Employees to Be Invited to a Meeting](./Day26/README.md)
 - [x] **Day 27**: [1558 - Course Schedule IV](./Day27/README.md)
 - [x] **Day 28**: [2764 - Maximum Number of Fish in a Grid](./Day28/README.md)
+- [x] **Day 29**: [684 - Redundant Connection](./Day29/README.md)
