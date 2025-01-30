@@ -33,3 +33,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 27**: [1558 - Course Schedule IV](./Day27/README.md)
 - [x] **Day 28**: [2764 - Maximum Number of Fish in a Grid](./Day28/README.md)
 - [x] **Day 29**: [684 - Redundant Connection](./Day29/README.md)
+- [x] **Day 30**: [2583 - Divide Nodes Into the Maximum Number of Groups](./Day30/README.md)
