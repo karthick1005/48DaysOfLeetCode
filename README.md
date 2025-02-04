@@ -38,3 +38,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 32**: [3429 - Special Array I](./Day32/README.md)
 - [x] **Day 33**: [1878 - Check if Array Is Sorted and Rotated](./Day33/README.md)
 - [x] **Day 34**: [3372 - Longest Strictly Increasing or Strictly Decreasing Subarray](./Day34/README.md)
+- [x] **Day 35**: [1927 - Maximum Ascending Subarray Sum](./Day35/README.md)
