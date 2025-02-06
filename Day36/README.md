@@ -1,70 +1,65 @@
-# Day 35: 1790 - Check if One String Swap Can Make Strings Equal
 
-**Difficulty**: Easy
+# Day 36: 1364 - Tuple with Same Product
+
+**Difficulty**: Medium
 
 ## Problem Description
-
-<div><div class="elfjS" data-track-load="description_content"><p>You are given two strings <code>s1</code> and <code>s2</code> of equal length. A <strong>string swap</strong> is an operation where you choose two indices in a string (not necessarily different) and swap the characters at these indices.</p>
-
-<p>Return <code>true</code> <em>if it is possible to make both strings equal by performing <strong>at most one string swap </strong>on <strong>exactly one</strong> of the strings. </em>Otherwise, return <code>false</code>.</p>
+<p>Given an array <code>nums</code> of <strong>distinct</strong> positive integers, return <em>the number of tuples </em><code>(a, b, c, d)</code><em> such that </em><code>a * b = c * d</code><em> where </em><code>a</code><em>, </em><code>b</code><em>, </em><code>c</code><em>, and </em><code>d</code><em> are elements of </em><code>nums</code><em>, and </em><code>a != b != c != d</code><em>.</em></p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong> s1 = "bank", s2 = "kanb"
-<strong>Output:</strong> true
-<strong>Explanation:</strong> For example, swap the first character with the last character of s2 to make "bank".
+<pre>
+<strong>Input:</strong> nums = [2,3,4,6]
+<strong>Output:</strong> 8
+<strong>Explanation:</strong> There are 8 valid tuples:
+(2,6,3,4) , (2,6,4,3) , (6,2,3,4) , (6,2,4,3)
+(3,4,2,6) , (4,3,2,6) , (3,4,6,2) , (4,3,6,2)
 </pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> s1 = "attack", s2 = "defend"
-<strong>Output:</strong> false
-<strong>Explanation:</strong> It is impossible to make them equal with one string swap.
-</pre>
-
-<p><strong class="example">Example 3:</strong></p>
-
-<pre><strong>Input:</strong> s1 = "kelb", s2 = "kelb"
-<strong>Output:</strong> true
-<strong>Explanation:</strong> The two strings are already equal, so no string swap operation is required.
+<pre>
+<strong>Input:</strong> nums = [1,2,4,5,10]
+<strong>Output:</strong> 16
+<strong>Explanation:</strong> There are 16 valid tuples:
+(1,10,2,5) , (1,10,5,2) , (10,1,2,5) , (10,1,5,2)
+(2,5,1,10) , (2,5,10,1) , (5,2,1,10) , (5,2,10,1)
+(2,10,4,5) , (2,10,5,4) , (10,2,4,5) , (10,2,5,4)
+(4,5,2,10) , (4,5,10,2) , (5,4,2,10) , (5,4,10,2)
 </pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>1 &lt;= s1.length, s2.length &lt;= 100</code></li>
-	<li><code>s1.length == s2.length</code></li>
-	<li><code>s1</code> and <code>s2</code> consist of only lowercase English letters.</li>
+	<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+	<li><code>1 &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+	<li>All elements in <code>nums</code> are <strong>distinct</strong>.</li>
 </ul>
-</div></div>
+
+
 
 ## Solution
-
 ```javascript
 /**
- * @param {string} s1
- * @param {string} s2
- * @return {boolean}
+ * @param {number[]} nums
+ * @return {number}
  */
-var areAlmostEqual = function (s1, s2) {
-  if (s1 === s2) return true;
+var tupleSameProduct = function (nums) {
+   let productCount = new Map(), result = 0;
 
-  let diff = [];
-  for (let i = 0; i < s1.length; i++) {
-    if (s1[i] !== s2[i]) diff.push(i);
-    if (diff.length > 2) return false;
-  }
+    for (let i = 0; i < nums.length; i++)
+        for (let j = i+1; j < nums.length; j++) {
+            let product = nums[i] * nums[j];
+            result += 8 * (productCount.get(product) || 0);
+            productCount.set(product, (productCount.get(product) || 0) + 1);
+        }
 
-  return (
-    diff.length === 2 &&
-    s1[diff[0]] === s2[diff[1]] &&
-    s1[diff[1]] === s2[diff[0]]
-  );
+    return result;
 };
 ```
 
-## Next Steps
 
+## Next Steps
 - Add optimization or improvements.
