@@ -42,3 +42,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 36**: [1790 - Check if One String Swap Can Make Strings Equal](./Day36/README.md)
 - [x] **Day 36**: [1364 - Tuple with Same Product](./Day36/README.md)
 - [x] **Day 37**: [3434 - Find the Number of Distinct Colors Among the Balls](./Day37/README.md)
+- [x] **Day 38**: [2434 - Design a Number Container System](./Day38/README.md)
