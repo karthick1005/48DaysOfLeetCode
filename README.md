@@ -44,3 +44,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 37**: [3434 - Find the Number of Distinct Colors Among the Balls](./Day37/README.md)
 - [x] **Day 38**: [2434 - Design a Number Container System](./Day38/README.md)
 - [x] **Day 39**: [2448 - Count Number of Bad Pairs](./Day39/README.md)
+- [x] **Day 40**: [3447 - Clear Digits](./Day40/README.md)
