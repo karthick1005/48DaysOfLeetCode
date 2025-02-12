@@ -46,3 +46,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 39**: [2448 - Count Number of Bad Pairs](./Day39/README.md)
 - [x] **Day 40**: [3447 - Clear Digits](./Day40/README.md)
 - [x] **Day 41**: [2021 - Remove All Occurrences of a Substring](./Day41/README.md)
+- [x] **Day 42**: [2473 - Max Sum of a Pair With Equal Sum of Digits](./Day42/README.md)
