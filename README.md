@@ -48,3 +48,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 41**: [2021 - Remove All Occurrences of a Substring](./Day41/README.md)
 - [x] **Day 42**: [2473 - Max Sum of a Pair With Equal Sum of Digits](./Day42/README.md)
 - [x] **Day 43**: [3332 - Minimum Operations to Exceed Threshold Value II](./Day43/README.md)
+- [x] **Day 44**: [1477 - Product of the Last K Numbers](./Day44/README.md)
