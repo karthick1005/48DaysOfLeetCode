@@ -50,3 +50,4 @@ Welcome to my journey of solving one LeetCode problem every day for 100 days!
 - [x] **Day 43**: [3332 - Minimum Operations to Exceed Threshold Value II](./Day43/README.md)
 - [x] **Day 44**: [1477 - Product of the Last K Numbers](./Day44/README.md)
 - [x] **Day 45**: [2802 - Find the Punishment Number of an Integer](./Day45/README.md)
+- [x] **Day 46**: [1819 - Construct the Lexicographically Largest Valid Sequence](./Day46/README.md)
