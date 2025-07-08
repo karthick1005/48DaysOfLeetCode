@@ -1,6 +1,6 @@
 # 48 Days of LeetCode Challenge 🎯
 
-Welcome to my journey of solving one LeetCode problem every day for 100 days!
+Welcome to my journey of solving one LeetCode problem every day for 48 days!
 
 ## Progress
 
